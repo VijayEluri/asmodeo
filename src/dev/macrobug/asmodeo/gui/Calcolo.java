@@ -109,15 +109,18 @@ public class Calcolo extends javax.swing.JPanel implements ActionListener {
         bgalto=new ButtonGroup();
 //
         java.net.URL url=getClass().getResource("resources/image/dir.gif");
+    out=new JRadioButton();
 		if(url!=null){
-			out=new JRadioButton(new ImageIcon(url));
+			out.setIcon(new ImageIcon(url));
 			out.setPressedIcon(new ImageIcon(url));}
 		url=getClass().getResource("resources/image/dira.gif");
 		if(url!=null)
 			out.setRolloverIcon(new ImageIcon(url));
 		url=getClass().getResource("resources/image/scr.gif");
+		in=new JRadioButton();
+		in.setSelected(true);
 		if(url!=null){
-			in=new JRadioButton(new ImageIcon(url),true);
+			in.setIcon(new ImageIcon(url));
 			in.setPressedIcon(new ImageIcon(url));}
 		url=getClass().getResource("resources/image/scra.gif");
 		if(url!=null)

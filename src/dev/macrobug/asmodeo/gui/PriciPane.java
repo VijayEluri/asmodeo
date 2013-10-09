@@ -65,9 +65,13 @@ public class PriciPane extends JPanel implements Externalizable,ActionListener{
 		url=getClass().getResource("resources/image/help.gif");
 		if(url!=null)
 			warning=new JMenuItem("Guida",new ImageIcon(url));
+		else
+			warning=new JMenuItem("Guida");
 		url=getClass().getResource("resources/image/mbsmall.gif");
 		if(url!=null)
 			co=new JMenuItem("Company",new ImageIcon(url));
+		else
+			co=new JMenuItem("Company");
 		about.addActionListener(new Help(0,f));
 		warning.addActionListener(new Help(1,f));
 		shor.addActionListener(new Help(2,f));
@@ -82,10 +86,12 @@ public class PriciPane extends JPanel implements Externalizable,ActionListener{
 		url=getClass().getResource("resources/image/cal.gif");
 		if(url!=null)
 			calco=new JMenuItem("Data Conversion",new ImageIcon(url));
+		else
+			calco=new JMenuItem("Data Conversion");
 		azioni.add(calco);
 		calco.addActionListener(new Calcolo(codice,numero));
 
-		proprieta=new JMenu("Propriet�");
+		proprieta=new JMenu("Proprietà");
 		proprieta.setMnemonic('P');
 		B=new JMenu("Cambia base");
 		jrbmi=new JRadioButtonMenuItem[5];
@@ -138,6 +144,8 @@ public class PriciPane extends JPanel implements Externalizable,ActionListener{
 		url=getClass().getResource("resources/image/empty.gif");
 		if(url!=null)
 			chiudi=new JMenuItem("Salva sezione e Chiudi",new ImageIcon(url));
+		else
+			chiudi=new JMenuItem("Salva sezione e Chiudi");
 		chiudi.addActionListener(this);
 		file.add(gnu);
 		file.add(load);

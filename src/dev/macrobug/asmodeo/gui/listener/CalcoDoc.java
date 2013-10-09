@@ -33,11 +33,11 @@ public class CalcoDoc implements DocumentListener{
 	public void insertUpdate(DocumentEvent e){
 		set=new JLabel(cod.getText()+doc.getText());
 		if(!(rb.isSelected()&&i>set.getText().length())){
-			nove=new Util(new JLabel(cod.getText()),new JLabel(""+cod.getText().length()));//� il personale
+			nove=new Util(new JLabel(""+cod.getText().length()),new JLabel(cod.getText()));//� il personale
 			if(i==0) //� un personale
 				sei=nove;
 			else //Bottoni classici
-				sei=new Util(set,new JLabel(""+i));
+				sei=new Util(new JLabel(""+i),set);
 			Document d=e.getDocument();
 			StringTokenizer stream=null;
 			try{
