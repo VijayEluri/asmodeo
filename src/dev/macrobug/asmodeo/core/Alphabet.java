@@ -1,8 +1,11 @@
 package dev.macrobug.asmodeo.core;
 
+import static java.lang.Math.ceil;
+import static java.lang.Math.log;
+
 import java.security.InvalidParameterException;
 
-public class Alphabet {
+public class Alphabet implements Codec{
 	private String alphabet;
 	
 	private static boolean check(String alphabet){
@@ -44,5 +47,14 @@ public class Alphabet {
 	}
 	public int indexOf(char c){
 		return alphabet.indexOf(c);
+	}
+
+	@Override
+  public int getBase() {
+		return alphabet.length();
+  }
+	@Override
+	public int getMax(){
+		return (int)ceil(log(255)/log(getBase()));
 	}
 }
