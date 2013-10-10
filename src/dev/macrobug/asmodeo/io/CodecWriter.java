@@ -11,6 +11,8 @@ import java.io.Writer;
 import java.nio.charset.CharacterCodingException;
 import java.util.ArrayList;
 
+import dev.macrobug.asmodeo.core.Codec;
+
 public class CodecWriter extends Writer implements Codec {
 
 	private Writer write;

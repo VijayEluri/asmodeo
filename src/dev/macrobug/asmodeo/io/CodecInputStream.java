@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.CharacterCodingException;
 
+import dev.macrobug.asmodeo.core.Codec;
+
 import static java.lang.Math.*;
 
 public class CodecInputStream extends InputStream implements Codec{

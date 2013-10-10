@@ -1,4 +1,4 @@
-package dev.macrobug.asmodeo.io;
+package dev.macrobug.asmodeo.core;
 
 public interface Codec {
 	int getBase();
