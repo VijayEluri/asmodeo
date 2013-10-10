@@ -10,9 +10,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.charset.CharacterCodingException;
 
-import dev.macrobug.asmodeo.core.Codec;
-
-public class CodecReader extends Reader implements Codec {
+public class CodecReader extends Reader{
 
 	private Reader read;
 	private char code[];

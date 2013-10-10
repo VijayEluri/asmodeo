@@ -6,9 +6,7 @@ import java.io.*;
 import java.nio.charset.CharacterCodingException;
 import java.util.ArrayList;
 
-import dev.macrobug.asmodeo.core.Codec;
-
-public class CodecOutputStream extends OutputStream implements Codec{
+public class CodecOutputStream extends OutputStream{
 
 	private OutputStream out;
 	private char[] code;
