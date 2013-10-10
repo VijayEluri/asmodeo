@@ -5,7 +5,9 @@ import static java.lang.Math.log;
 
 import java.security.InvalidParameterException;
 
-public class Alphabet implements Codec{
+import dev.macrobug.asmodeo.core.interfaces.Code;
+
+public class Alphabet implements Code{
 	private String alphabet;
 	
 	private static boolean check(String alphabet){
