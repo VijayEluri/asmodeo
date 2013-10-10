@@ -29,7 +29,7 @@ import org.macrobug.util.*;
 
 import dev.macrobug.asmodeo.gui.PriciPane;
 
-public class Start {
+public class Main {
 
 	public static void main(String argv[]) {
 		MyF.setDefaultLookAndFeelDecorated(true);
