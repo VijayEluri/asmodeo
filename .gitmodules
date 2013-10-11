@@ -1,3 +1,0 @@
-[submodule "util"]
-	path = lib/util
-	url = git@github.com:sadjehwty/util.git
