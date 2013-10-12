@@ -16,9 +16,45 @@ public class AlphabetTest{
   }
 	@Test
 	public void testCrop(){
+		try{
+			bin.crop(-3);
+			assertTrue(false);
+		}catch(Exception e){
+			assertTrue(true);
+		}
+		try{
+			ott.crop(0);
+			assertTrue(false);
+		}catch(Exception e){
+			assertTrue(true);
+		}
+		try{
+			dec.crop(20);
+			assertTrue(false);
+		}catch(Exception e){
+			assertTrue(true);
+		}
+	  Alphabet tmp=hex.crop(-3);
+	  assertEquals(tmp.getBase(),13);
+	  tmp=cus.crop(5);
+	  assertEquals(tmp.getBase(),5);
 	}
 	@Test
-	public void testConcat(String alphabet){
+	public void testConcat(){
+		Alphabet tmp=null;
+		try{
+			tmp=bin.concat("z");
+			assertTrue(true);
+		}catch(Exception e){
+			assertTrue(false);
+		}
+		assertEquals(tmp.getBase(),3);
+		try{
+			bin.concat(tmp);
+			assertTrue(false);
+		}catch(Exception e){
+			assertTrue(true);
+		}
 	}
 	@Test
 	public void testCharAt(){

@@ -41,7 +41,7 @@ public class Alphabet implements Code{
 	}
 	
 	public Alphabet concat(Alphabet alphabet){
-		return new Alphabet(this.alphabet+alphabet);
+		return new Alphabet(this.alphabet+alphabet.alphabet);
 	}
 	
 	public char charAt(int i){
