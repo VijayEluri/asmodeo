@@ -1,7 +1,8 @@
 package dev.macrobug.asmodeo.core;
 
+import java.security.InvalidParameterException;
 import java.util.LinkedList;
-
+import static java.lang.Math.pow;
 import dev.macrobug.asmodeo.core.interfaces.Coder;
 
 public class IntegerCoder extends Coder<Integer> {
@@ -40,8 +41,13 @@ public class IntegerCoder extends Coder<Integer> {
 
 	@Override
   public Integer decode(String s) {
-	  // TODO Auto-generated method stub
-	  return null;
+		if(!alphabet.isValid(s))
+			throw new InvalidParameterException();
+		int ret=0,BASE=alphabet.getBase(),LEN=s.length();
+		for(int i=0;i<LEN;i++){
+			ret+=s.charAt(i)*pow(LEN-i,BASE);
+		}
+	  return ret;
   }
 
 }

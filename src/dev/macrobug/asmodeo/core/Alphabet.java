@@ -59,4 +59,12 @@ public class Alphabet implements Code{
 	public int getMax(){
 		return (int)ceil(log(255)/log(getBase()));
 	}
+	@Override
+	public boolean isValid(String s){
+		for(Character c:s.toCharArray()){
+			if(alphabet.indexOf(c)<0)
+				return false;
+		}
+		return true;
+	}
 }
