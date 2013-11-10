@@ -9,7 +9,7 @@ public abstract class Coder<T> {
 	protected Alphabet alphabet;
 	
 	public Coder(String s){ this(new Alphabet(s)); }
-	public Coder(Alphabet alphabet2) {this(alphabet2,alphabet2.getMax());  }
+	public Coder(Alphabet alphabet2) {this(alphabet2,alphabet2.getBase());  }
 	public Coder(Alphabet alphabet2, int max) {
 		alphabet=alphabet2.crop(max);
 	}

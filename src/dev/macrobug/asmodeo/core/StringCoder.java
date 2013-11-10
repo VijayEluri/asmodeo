@@ -16,13 +16,13 @@ public class StringCoder extends Coder<String>{
 	public StringCoder(Alphabet alphabet2) {this(alphabet2,true);  }
 	public StringCoder(Alphabet alphabet2, int max) { this(alphabet2,true,max); }
 	public StringCoder(String s, boolean b){ this(new Alphabet(s),b); }
-	public StringCoder(Alphabet alphabet2, boolean b){ this(alphabet2,b,b?null:' '); }
-	public StringCoder(Alphabet alphabet2, boolean b, int max2) {this(alphabet2,b,b?null:' ',max2);}
+	public StringCoder(Alphabet alphabet2, boolean b){ this(alphabet2,b,b?alphabet2.getBase():' '); }
+	public StringCoder(Alphabet alphabet2, boolean b, int max2) {this(alphabet2,b,' ',max2);}
 	// no padding
 	public StringCoder(String s, char c){ this(new Alphabet(s),c); }
 	public StringCoder(Alphabet alphabet2, char c){ this(alphabet2,false,c); }
 	
-	private StringCoder(Alphabet alphabet2, boolean b, char c) {this(alphabet2,b,c,alphabet2.getMax()); }
+	private StringCoder(Alphabet alphabet2, boolean b, char c) {this(alphabet2,b,c,alphabet2.getBase()); }
 	private StringCoder(Alphabet a, boolean b, char c, int d){
 		super(a,d);
 		coder=new IntegerCoder(a,d);
@@ -37,15 +37,15 @@ public class StringCoder extends Coder<String>{
 	@Override
   public String encode(String s) {
 		StringBuilder build=new StringBuilder();
-		for(Character c:s.toCharArray()){
-			String t=coder.encode(Character.getNumericValue(c));
+		for(Byte c:s.getBytes()){
+			String t=coder.encode(c.intValue());
 			if(padding)
 				while(t.length()<MAX) t=charPadding+t;
 			else
 				t+=charPadding;
 			build.append(t);
 		}
-	  return build.toString();
+	  return padding?build.toString():build.substring(0, build.length()-1);
   }
 	@Override
   public String decode(String s) {

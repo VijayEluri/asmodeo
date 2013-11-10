@@ -25,7 +25,7 @@ public class IntegerCoder extends Coder<Integer> {
 	@Override
   public String encode(Integer i) {
 		long t=i<0?1-i:i;
-		final int MAX=alphabet.getMax();
+		final int MAX=alphabet.getBase();
 		LinkedList<Character> stack=new LinkedList<Character>();
 		while(t>=MAX){
 			int resto=(int) (t%MAX);
@@ -45,7 +45,7 @@ public class IntegerCoder extends Coder<Integer> {
 			throw new InvalidParameterException();
 		int ret=0,BASE=alphabet.getBase(),LEN=s.length();
 		for(int i=0;i<LEN;i++){
-			ret+=s.charAt(i)*pow(LEN-i,BASE);
+			ret+=alphabet.indexOf(s.charAt(i))*pow(BASE,LEN-i-1);
 		}
 	  return ret;
   }
