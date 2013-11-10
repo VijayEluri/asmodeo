@@ -58,14 +58,26 @@ public class AlphabetTest{
 	}
 	@Test
 	public void testCharAt(){
+		assertEquals(cus.charAt(30),'u');
 	}
 	@Test
 	public void testIndexOf(){
+		assertEquals(cus.indexOf('z'),35);
 	}
 	@Test
-  public void testGetBase() {
-  }
+	public void testGetBase() {
+		assertEquals(bin.getBase(),2);
+		assertEquals(ott.getBase(),8);
+		assertEquals(dec.getBase(),10);
+		assertEquals(hex.getBase(),16);
+		assertEquals(cus.getBase(),36);
+	}
 	@Test
 	public void testGetMax(){
+		assertEquals(bin.getMax(),8);
+		assertEquals(ott.getMax(),3);
+		assertEquals(dec.getMax(),3);
+		assertEquals(hex.getMax(),2);
+		assertEquals(cus.getMax(),2);
 	}
 }
