@@ -315,7 +315,7 @@ public class EdiTable extends JComponent implements ChangeCellListener {
         f.getContentPane().add(new JPanel() {
           private static final long serialVersionUID = -944261398847625258L;
 
-						public JPanel get() {
+            public JPanel get() {
                 setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
                 add(
                         new JScrollPane(in));
