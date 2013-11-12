@@ -6,6 +6,10 @@ public abstract class Coder<T> {
   public abstract String encode(T t);
   public abstract T decode(String s);
   
+  public int getMax(){
+  	return alphabet.getMax();
+  }
+  
   protected Alphabet alphabet;
   
   public Coder(String s){ this(new Alphabet(s)); }
