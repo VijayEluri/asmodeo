@@ -13,9 +13,13 @@ public class CodecInputStream extends InputStream{
     this.in=in;
   }
   public int read() throws IOException {
-    int t=in.read();
-    if(t<0)
-      return t;
-    return coder.decode(""+((char)t));
+  	StringBuilder st=new StringBuilder();
+  	int t;
+  	for(int i=0;i<coder.getMax();i++){
+  		if((t=in.read())<0)
+        return t;
+  		st.append((char)t);
+  	}
+    return coder.decode(st.toString());
   }
 }
