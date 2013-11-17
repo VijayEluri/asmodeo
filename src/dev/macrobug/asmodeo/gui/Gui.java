@@ -13,9 +13,9 @@ public class Gui implements AbstractGui{
 	 * Create the application.
 	 */
 	public Gui() {
-		// TODO Splash Screen show
+		// TODO Show Splash screen
 		initialize();
-		// TODO Splash Screen hide
+		// TODO Hide Splash screen
 	}
 
 	/**
