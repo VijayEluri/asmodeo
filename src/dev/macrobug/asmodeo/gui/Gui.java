@@ -9,11 +9,11 @@ public class Gui implements AbstractGui {
 	/**
 	 * Create the application.
 	 */
-	public Gui() {
+	public Gui(String[] args) {
 		// TODO Show Splash screen
 		initialize();
 		// TODO Hide Splash screen
-	}
+  }
 
 	/**
 	 * Initialize the contents of the frame.
