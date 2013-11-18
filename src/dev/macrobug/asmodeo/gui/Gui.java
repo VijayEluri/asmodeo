@@ -14,6 +14,22 @@ public class Gui implements AbstractUI {
 	public Gui() {
 		SplashScreen splash = SplashScreen.getSplashScreen();
 		initialize();
+/*
+ *  Graphics2D g = splash.createGraphics();
+ *  if (g == null) {
+ *      System.out.println("g is null");
+ *      return;
+ *  }
+ *  for(int i=0; i<100; i++) {
+ *      renderSplashFrame(g, i);
+ *      splash.update();
+ *      try {
+ *          Thread.sleep(90);
+ *      }
+ *      catch(InterruptedException e) {
+ *      }
+ *  }
+ */
 		if(splash!=null) splash.close();
   }
 
