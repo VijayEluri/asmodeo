@@ -2,7 +2,7 @@ package dev.macrobug.asmodeo;
 
 import java.awt.EventQueue;
 
-import dev.macrobug.asmodeo.gui.AbstractGui;
+import dev.macrobug.asmodeo.gui.AbstractUI;
 import dev.macrobug.asmodeo.gui.Gui;
 
 public class Main {
@@ -10,8 +10,8 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AbstractGui window = new Gui(args);
-					window.show();
+					AbstractUI ui = new Gui();
+					ui.start(args);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

@@ -1,18 +1,20 @@
 package dev.macrobug.asmodeo.gui;
 
+import java.awt.SplashScreen;
+
 import javax.swing.JFrame;
 
-public class Gui implements AbstractGui {
+public class Gui implements AbstractUI {
 
 	private JFrame frame;
 
 	/**
 	 * Create the application.
 	 */
-	public Gui(String[] args) {
-		// TODO Show Splash screen
+	public Gui() {
+		final SplashScreen splash = SplashScreen.getSplashScreen();
 		initialize();
-		// TODO Hide Splash screen
+		if(splash!=null) splash.close();
   }
 
 	/**
@@ -25,7 +27,7 @@ public class Gui implements AbstractGui {
 	}
 
 	@Override
-  public void show() {
+  public void start(String[] args) {
 	  frame.setVisible(true);
   }
 
