@@ -6,17 +6,33 @@ import java.io.File;
 
 import javax.swing.*;
 
-public class Gui implements AbstractGui{
+public class Gui implements AbstractUI {
 
 	private JFrame frmAsmodeo;
 
 	/**
 	 * Create the application.
 	 */
-	public Gui(String[] args) {
-		// TODO Show Splash screen
+	public Gui() {
+		SplashScreen splash = SplashScreen.getSplashScreen();
 		initialize();
-		// TODO Hide Splash screen
+/*
+ *  Graphics2D g = splash.createGraphics();
+ *  if (g == null) {
+ *      System.out.println("g is null");
+ *      return;
+ *  }
+ *  for(int i=0; i<100; i++) {
+ *      renderSplashFrame(g, i);
+ *      splash.update();
+ *      try {
+ *          Thread.sleep(90);
+ *      }
+ *      catch(InterruptedException e) {
+ *      }
+ *  }
+ */
+		if(splash!=null) splash.close();
   }
 
 	/**
@@ -118,7 +134,7 @@ public class Gui implements AbstractGui{
 	}
 
 	@Override
-  public void show() {
+  public void start(String[] args) {
 		frmAsmodeo.setVisible(true);
   }
 	
