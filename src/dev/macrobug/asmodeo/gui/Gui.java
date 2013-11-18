@@ -1,8 +1,10 @@
 package dev.macrobug.asmodeo.gui;
 
+import java.awt.SplashScreen;
+
 import javax.swing.JFrame;
 
-public class Gui implements AbstractGui {
+public class Gui implements AbstractUI {
 
 	private JFrame frame;
 
@@ -10,10 +12,26 @@ public class Gui implements AbstractGui {
 	 * Create the application.
 	 */
 	public Gui() {
-		// TODO Show Splash screen
+		SplashScreen splash = SplashScreen.getSplashScreen();
 		initialize();
-		// TODO Hide Splash screen
-	}
+/*
+ *  Graphics2D g = splash.createGraphics();
+ *  if (g == null) {
+ *      System.out.println("g is null");
+ *      return;
+ *  }
+ *  for(int i=0; i<100; i++) {
+ *      renderSplashFrame(g, i);
+ *      splash.update();
+ *      try {
+ *          Thread.sleep(90);
+ *      }
+ *      catch(InterruptedException e) {
+ *      }
+ *  }
+ */
+		if(splash!=null) splash.close();
+  }
 
 	/**
 	 * Initialize the contents of the frame.
@@ -25,7 +43,7 @@ public class Gui implements AbstractGui {
 	}
 
 	@Override
-  public void show() {
+  public void start(String[] args) {
 	  frame.setVisible(true);
   }
 
