@@ -12,7 +12,7 @@ public class Gui implements AbstractUI {
 	 * Create the application.
 	 */
 	public Gui() {
-		final SplashScreen splash = SplashScreen.getSplashScreen();
+		SplashScreen splash = SplashScreen.getSplashScreen();
 		initialize();
 		if(splash!=null) splash.close();
   }
