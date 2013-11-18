@@ -2,6 +2,7 @@ package dev.macrobug.asmodeo.gui;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 
 import javax.swing.*;
 
@@ -28,6 +29,9 @@ public class Gui implements AbstractGui{
 		frmAsmodeo.setBounds(100, 100, 450, 300);
 		frmAsmodeo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmAsmodeo.getContentPane().setLayout(new BoxLayout(frmAsmodeo.getContentPane(), BoxLayout.Y_AXIS));
+		
+		SaveOnExitListener soel=new SaveOnExitListener();
+		frmAsmodeo.addWindowListener(soel);
 		
 		Box horizontalBox = Box.createHorizontalBox();
 		frmAsmodeo.getContentPane().add(horizontalBox);
@@ -88,6 +92,7 @@ public class Gui implements AbstractGui{
 		JMenuItem mntmClose = new JMenuItem("Quit");
 		mntmClose.setIcon(new ImageIcon(Gui.class.getResource("/javax/swing/plaf/metal/icons/ocean/close.gif")));
 		mntmClose.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
+		mntmClose.addActionListener(soel);
 		mnFile.add(mntmClose);
 		
 		JMenu mnTools = new JMenu("Tools");
@@ -116,4 +121,45 @@ public class Gui implements AbstractGui{
   public void show() {
 		frmAsmodeo.setVisible(true);
   }
+	
+	private class SaveOnExitListener implements WindowListener, ActionListener{
+		private File getFile(){
+			// TODO da fare
+			return null;
+		}
+		
+		private void save(JFrame frame){
+			// TODO da fare
+			File file=getFile();
+			return;
+		}
+
+		@Override
+    public void actionPerformed(ActionEvent e) {
+			save((JFrame) SwingUtilities.getWindowAncestor((Component) e.getSource()));
+    }
+
+		@Override
+    public void windowOpened(WindowEvent e) {}
+
+		@Override
+    public void windowClosing(WindowEvent e) {
+	    save((JFrame) e.getWindow());
+    }
+
+		@Override
+    public void windowClosed(WindowEvent e) {}
+
+		@Override
+    public void windowIconified(WindowEvent e) {}
+
+		@Override
+    public void windowDeiconified(WindowEvent e) {}
+
+		@Override
+    public void windowActivated(WindowEvent e) {}
+
+		@Override
+    public void windowDeactivated(WindowEvent e) {}
+	}
 }
